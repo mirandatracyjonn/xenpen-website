@@ -17,7 +17,7 @@ import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://xenpen.com"
-SUPABASE = "https://XENPEN_SUPABASE_REF.supabase.co"
+SUPABASE = "https://peimygxwudoemgqxczpq.supabase.co"
 KEY = re.search(r'SUPABASE_KEY = "([^"]+)"', (ROOT / "site.js").read_text()).group(1)
 PHOTOS = f"{SUPABASE}/storage/v1/object/public/listing-photos/"
 OUT = ROOT / "l"
@@ -120,7 +120,7 @@ def main():
 
 if __name__ == "__main__":
     # Until scripts/configure_backend.sh has filled in Xenpen's Supabase project, there is nothing to build.
-    if "XENPEN_SUPABASE_REF" in SUPABASE:
+    if "peimygxwudoemgqxczpq" in SUPABASE:
         print("Supabase isn't configured yet; skipping share pages.")
     else:
         main()

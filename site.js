@@ -2,9 +2,9 @@
 // iPhone app, using the public (publishable) key: visitors see exactly what a signed-out app user sees. Buying,
 // bidding, renting, and messaging happen only in the app, after identity verification.
 
-export const SUPABASE_URL = "https://XENPEN_SUPABASE_REF.supabase.co";
+export const SUPABASE_URL = "https://peimygxwudoemgqxczpq.supabase.co";
 // Publishable key: safe to ship in a web page. Row-level security decides what it can read.
-export const SUPABASE_KEY = "XENPEN_SUPABASE_PUBLISHABLE_KEY";
+export const SUPABASE_KEY = "sb_publishable_s3SuLP4SXLDm2IJCxKjphw_cfiDUt5O";
 
 // Fill these in when the links exist; until then the Download page says "coming soon".
 export const TESTFLIGHT_URL = "https://testflight.apple.com/join/XENPEN_TESTFLIGHT_CODE";

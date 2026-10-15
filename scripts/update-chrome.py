@@ -36,12 +36,12 @@ SECTION = {
     "listing.html": "browse.html", "featured.html": "browse.html", "live.html": "browse.html",
     "purchases.html": "account.html", "plans.html": "account.html", "member.html": "account.html",
 }
-SUPABASE = "https://XENPEN_SUPABASE_REF.supabase.co"
+SUPABASE = "https://peimygxwudoemgqxczpq.supabase.co"
 # Content Security Policy: code and styles only from xenpen.com; data only from our Supabase project.
 CSP = (
     "default-src 'self'; script-src 'self'; style-src 'self'; "
     # Profile photos can come from the member's Google or GitHub account (as in the apps).
-    f"img-src 'self' data: blob: {SUPABASE} https://*.googleusercontent.com https://avatars.githubusercontent.com; connect-src 'self' {SUPABASE} wss://XENPEN_SUPABASE_REF.supabase.co; "
+    f"img-src 'self' data: blob: {SUPABASE} https://*.googleusercontent.com https://avatars.githubusercontent.com; connect-src 'self' {SUPABASE} wss://peimygxwudoemgqxczpq.supabase.co; "
     "font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"
 )
 CSP_TAG = f'  <meta http-equiv="Content-Security-Policy" content="{CSP}">\n'
