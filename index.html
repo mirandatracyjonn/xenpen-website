@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https://XENPEN_SUPABASE_REF.supabase.co https://*.googleusercontent.com https://avatars.githubusercontent.com; connect-src 'self' https://XENPEN_SUPABASE_REF.supabase.co wss://XENPEN_SUPABASE_REF.supabase.co; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Xenpen</title>
+  <meta name="description" content="Xenpen, the online marketplace: buy, sell, bid, rent, and hire. Every member verified. In California and the Philippines. In California and the Philippines.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#2c8af0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Xenpen">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="home.js"></script>
+  <script src="vendor/supabase-js-2.117.2.js"></script>
+  <script type="module" src="auth.js"></script>
+  <meta property="og:site_name" content="Xenpen">
+  <meta property="og:title" content="Xenpen">
+  <meta property="og:description" content="Xenpen, the online marketplace: buy, sell, bid, rent, and hire. Every member verified. In California and the Philippines. In California and the Philippines.">
+  <meta property="og:image" content="https://xenpen.com/og-beta.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Xenpen public beta now open: buy and sell, jobs, real estate, and rentals. Join on TestFlight at xenpen.com.">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html"><img src="logo-mark.png" alt="" width="44" height="44">Xenpen</a>
+  <nav class="tab-bar" aria-label="Main">
+    <a href="index.html" data-tab="home" aria-current="page"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></a>
+    <a href="browse.html" data-tab="search"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span>Search</span></a>
+    <a href="post.html" data-tab="post"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg><span>Post</span></a>
+    <a href="messages.html" data-tab="inbox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg><span>Inbox</span></a>
+    <a href="account.html" data-tab="profile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg><span>Profile</span></a>
+  </nav>
+  <a class="bell" href="notifications.html" aria-label="Notifications"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></a>
+  <details class="menu">
+    <summary aria-label="More"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></summary>
+    <nav aria-label="More">
+        <a href="live.html">Live</a>
+        <a href="featured.html">Featured listings</a>
+        <a href="help.html">User Handbook</a>
+        <a href="faq.html">FAQs</a>
+        <a href="about.html">About</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="download.html" class="nav-cta">Get the app</a>
+    </nav>
+  </details>
+</div></header>
+<main id="main" tabindex="-1" class="wide home">
+  <section class="hero-band">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Online Marketplace · California &amp; the Philippines</p>
+        <h1>Buy, sell, bid, rent, and hire. Every member verified.</h1>
+        <p class="lead">Everyone on Xenpen verifies their ID. Prices are always shown up front, and you chat without sharing your number.</p>
+        <form class="hero-search" action="browse.html" method="get" role="search">
+          <label class="sr-only" for="hero-q">Search Xenpen</label>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="search" id="hero-q" name="q" placeholder="Search bikes, tools, homes, pros…">
+          <button type="submit">Search</button>
+        </form>
+        <p class="actions">
+          <a class="button light" href="download.html">Get the app</a>
+          <a class="button ghost" href="browse.html">Browse listings</a>
+        </p>
+        <ul class="chips" aria-label="Why Xenpen">
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>ID-verified</li>
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>No hidden fees</li>
+          <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Private chat</li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="blob b1"></div><div class="blob b2"></div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-head"><img src="logo-mark.png" alt="" width="28" height="28"><span>Nearby</span></div>
+          <ul class="phone-list">
+          <li class="c-red"><span class="ph-thumb"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.5"/></svg></span><span><b>Mountain bike</b><small>Pickup · 2 mi</small></span></li>
+          <li class="c-amber"><span class="ph-thumb"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></svg></span><span><b>Vintage camera</b><small>Auction · 3 bids</small></span></li>
+          <li class="c-green"><span class="ph-thumb"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span><b>Pressure washer</b><small>Rent · per day</small></span></li>
+          <li class="c-blue"><span class="ph-thumb"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><span><b>2-bed apartment</b><small>Tour on request</small></span></li>
+          </ul>
+        </div>
+        <div class="float-badge fb1"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Verified</div>
+        <div class="float-badge fb2"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>Star reviews</div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="cats-heading">
+    <h2 id="cats-heading" class="plain">Explore Xenpen</h2>
+    <ul class="cats">
+      <li><a class="cat c-red" href="browse.html?format=fixed">
+        <span class="cat-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.5"/></svg></span>
+        <span class="cat-name">Buy &amp; sell</span>
+        <span class="cat-sub">Everyday items nearby</span>
+      </a></li>
+      <li><a class="cat c-amber" href="browse.html?format=auction">
+        <span class="cat-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></svg></span>
+        <span class="cat-name">Auctions</span>
+        <span class="cat-sub">Bid, or Buy It Now</span>
+      </a></li>
+      <li><a class="cat c-green" href="browse.html?format=rental">
+        <span class="cat-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+        <span class="cat-name">Rent tools</span>
+        <span class="cat-sub">Borrow, don't buy</span>
+      </a></li>
+      <li><a class="cat c-blue" href="browse.html?format=home_rent">
+        <span class="cat-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
+        <span class="cat-name">Homes</span>
+        <span class="cat-sub">For rent and for sale</span>
+      </a></li>
+      <li><a class="cat c-purple" href="browse.html?format=services">
+        <span class="cat-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></span>
+        <span class="cat-name">Hire pros</span>
+        <span class="cat-sub">Cleaning, repairs, lessons</span>
+      </a></li>
+      <li><a class="cat c-teal" href="browse.html?format=jobs">
+        <span class="cat-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+        <span class="cat-name">Jobs</span>
+        <span class="cat-sub">Post one, get responses</span>
+      </a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="featured-heading" id="featured-section" hidden>
+    <div class="section-head"><h2 id="featured-heading">Featured</h2><a href="featured.html">Feature yours</a></div>
+    <ul class="cards" id="featured"></ul>
+  </section>
+
+  <section aria-labelledby="latest-heading">
+    <div class="section-head">
+      <h2 id="latest-heading">Latest on Xenpen</h2>
+      <a href="browse.html">See all</a>
+    </div>
+    <p class="status-line" id="latest-status" role="status">Loading listings…</p>
+    <ul class="cards" id="latest"></ul>
+  </section>
+
+  <section aria-labelledby="how-heading">
+    <h2 id="how-heading" class="plain center">How it works</h2>
+    <ol class="steps">
+      <li><span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Verify once</h3><p>A quick ID and selfie check. It keeps scammers out.</p></li>
+      <li><span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span><h3>Find it nearby</h3><p>Shop, bid, rent, or hire close to home, or have it shipped.</p></li>
+      <li><span class="step-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span><h3>Deal and review</h3><p>Meet or ship, then rate each other with stars.</p></li>
+    </ol>
+  </section>
+
+  <section class="trust-band" aria-labelledby="trust-heading">
+    <h2 id="trust-heading" class="plain">Built for trust</h2>
+    <ul>
+      <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><b>Real people</b><span>Every member is ID-verified.</span></li>
+      <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg><b>Honest prices</b><span>Every price is shown. No hidden fees.</span></li>
+      <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg><b>Your privacy</b><span>Your phone, email, and address stay private.</span></li>
+      <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><b>Reputation</b><span>Stars, reviews, and levels you earn.</span></li>
+    </ul>
+  </section>
+
+  <section class="cta-band">
+    <img src="app-icon.png" alt="" width="72" height="72">
+    <div>
+      <h2 class="plain">Get Xenpen on iPhone</h2>
+      <p>Buy, bid, rent, and hire in the app. It's free.</p>
+    </div>
+    <a class="button light" href="download.html">Get the app</a>
+  </section>
+</main>
+<footer class="site-footer"><div class="inner">
+  <nav aria-label="Legal">
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="help.html">User Handbook</a>
+    <a href="faq.html">FAQs</a>
+    <a href="community-guidelines.html">Community Guidelines</a>
+    <a href="partners.html">Partners</a>
+    <a href="plans.html">Plans</a>
+    <a href="featured.html">Featured listings</a>
+    <a href="law-enforcement.html">Law Enforcement</a>
+  </nav>
+  <p class="copyright">© 2026 Xenpen, LLC</p>
+</div></footer>
+</body>
+</html>

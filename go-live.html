@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https://XENPEN_SUPABASE_REF.supabase.co https://*.googleusercontent.com https://avatars.githubusercontent.com; connect-src 'self' https://XENPEN_SUPABASE_REF.supabase.co wss://XENPEN_SUPABASE_REF.supabase.co; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>How to go live · Xenpen</title>
+  <meta name="description" content="How to sell live on Xenpen with your own Amazon IVS, YouTube Live, Facebook Live, or Twitch: video guide and step by step.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#2c8af0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Xenpen">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="vendor/supabase-js-2.117.2.js"></script>
+  <script type="module" src="auth.js"></script>
+  <meta property="og:site_name" content="Xenpen">
+  <meta property="og:title" content="How to go live · Xenpen">
+  <meta property="og:description" content="How to sell live on Xenpen with your own Amazon IVS, YouTube Live, Facebook Live, or Twitch: video guide and step by step.">
+  <meta property="og:image" content="https://xenpen.com/og-beta.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Xenpen public beta now open: buy and sell, jobs, real estate, and rentals. Join on TestFlight at xenpen.com.">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html"><img src="logo-mark.png" alt="" width="44" height="44">Xenpen</a>
+  <nav class="tab-bar" aria-label="Main">
+    <a href="index.html" data-tab="home"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></a>
+    <a href="browse.html" data-tab="search"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span>Search</span></a>
+    <a href="post.html" data-tab="post"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg><span>Post</span></a>
+    <a href="messages.html" data-tab="inbox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg><span>Inbox</span></a>
+    <a href="account.html" data-tab="profile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg><span>Profile</span></a>
+  </nav>
+  <a class="bell" href="notifications.html" aria-label="Notifications"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></a>
+  <details class="menu">
+    <summary aria-label="More"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></summary>
+    <nav aria-label="More">
+        <a href="live.html">Live</a>
+        <a href="featured.html">Featured listings</a>
+        <a href="help.html">User Handbook</a>
+        <a href="faq.html">FAQs</a>
+        <a href="about.html">About</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="download.html" class="nav-cta">Get the app</a>
+    </nav>
+  </details>
+</div></header>
+<main id="main" tabindex="-1">
+  <h1>How to go live</h1>
+  <p class="lead">Sell live to your followers with your own Amazon IVS, YouTube Live, Facebook Live, or Twitch account. Xenpen doesn't charge for streaming; live shows are for selling your listings (no virtual gifts).</p>
+  <p class="hint">The video has a voice guide; the steps below say the same thing.</p>
+
+  <h2>In the Xenpen app</h2>
+  <ol class="guide-steps">
+    <li class="guide-step"><div><h3>1. Open Profile, then Go Live</h3><p>You need to be ID-verified to go live.</p></div></li>
+    <li class="guide-step"><div><h3>2. Choose your platform and save your channel</h3><p>Pick Amazon IVS, YouTube Live, Facebook Live, or Twitch, paste your channel link (see below for where to find it), and tap Save Channel.</p></div></li>
+    <li class="guide-step"><div><h3>3. Streaming from this phone? Add your server and stream key</h3><p>They stay on your phone and are never sent to Xenpen. Using OBS, Larix, or an external camera? Leave these empty and put the stream key in that app instead.</p></div></li>
+    <li class="guide-step"><div><h3>4. Name your show and pick what you're selling</h3><p>Feature up to 12 of your live listings. Buyers check out as usual.</p></div></li>
+    <li class="guide-step"><div><h3>5. Go live</h3><p>Tap Go Live with This Phone's Camera, or start streaming in your other app and tap Go Live with an External App. Your followers get a notification. Tap End Show when you're done.</p></div></li>
+  </ol>
+
+  <h2>Set up your platform</h2>
+  <details class="help-article" open><summary>Amazon IVS</summary>
+    <p>In the <a href="https://console.aws.amazon.com/ivs/" rel="noopener">Amazon IVS console</a>, create a channel (low latency). Copy its <strong>Playback URL</strong> into Xenpen. The <strong>Ingest server</strong> and <strong>Stream key</strong> go into your broadcasting app, or into Xenpen's “Stream from this phone”. AWS bills your account directly.</p></details>
+  <details class="help-article"><summary>YouTube Live</summary>
+    <p>In <a href="https://studio.youtube.com" rel="noopener">YouTube Studio</a>, choose Go Live → Stream (your channel must be enabled for live streaming; it can take up to 24 hours the first time). In Xenpen, paste your channel link (youtube.com/channel/UC…); it always shows your current live stream. Copy the <strong>Stream key</strong> into your broadcasting app or into Xenpen's “Stream from this phone” (the server is filled in for you).</p></details>
+  <details class="help-article"><summary>Facebook Live</summary>
+    <p>Open <a href="https://www.facebook.com/live/producer" rel="noopener">Facebook Live Producer</a> and choose Streaming software. Copy the <strong>Stream key</strong> into your broadcasting app or Xenpen's “Stream from this phone”. Facebook makes a new video for each broadcast, so when you go live, paste that video's link (facebook.com/…/videos/…) in “Live video link for this show”.</p></details>
+  <details class="help-article"><summary>Twitch</summary>
+    <p>In your <a href="https://dashboard.twitch.tv/settings/stream" rel="noopener">Twitch Creator Dashboard → Settings → Stream</a>, copy your <strong>Primary Stream key</strong> into your broadcasting app or Xenpen's “Stream from this phone”. In Xenpen, paste your channel link (twitch.tv/yourname).</p></details>
+
+  <h2>While you're live</h2>
+  <ul>
+    <li>Viewers double-tap the video to send hearts; more hearts move your show up in Live now. Hearts are free likes, not gifts.</li>
+    <li>Chat with buyers. You can remove messages in your own show.</li>
+    <li>Follow the <a href="community-guidelines.html#live">Community Guidelines for live shows</a>: show the real item, no children on camera, nothing illegal.</li>
+    <li>Never share your stream key. Xenpen will never ask for it.</li>
+  </ul>
+  <p>More questions? Search the <a href="help.html?q=go%20live">User Handbook</a> or <a href="contact.html">contact Xenpen Support</a>.</p>
+</main>
+<footer class="site-footer"><div class="inner">
+  <nav aria-label="Legal">
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="help.html">User Handbook</a>
+    <a href="faq.html">FAQs</a>
+    <a href="community-guidelines.html">Community Guidelines</a>
+    <a href="partners.html">Partners</a>
+    <a href="plans.html">Plans</a>
+    <a href="featured.html">Featured listings</a>
+    <a href="law-enforcement.html">Law Enforcement</a>
+  </nav>
+  <p class="copyright">© 2026 Xenpen, LLC</p>
+</div></footer>
+</body>
+</html>

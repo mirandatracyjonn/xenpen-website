@@ -1,0 +1,37 @@
+// Stripe Checkout and Stripe payout sign-up come back here; this hands control back to the Xenpen app, or (web=1)
+// stays on xenpen.com for purchases made on the website.
+const params = new URLSearchParams(location.search);
+const flow = params.get("flow") === "connect" ? "connect" : "checkout";
+const status = (params.get("status") || "").replace(/[^a-z]/g, "");
+const payment = (params.get("payment") || "").replace(/[^a-f0-9-]/gi, "");
+
+const titles = {
+  "checkout:paid": "Payment authorized",
+  "checkout:cancelled": "Payment cancelled",
+  "connect:done": "Payout setup saved",
+  "connect:retry": "Let's finish your payout setup",
+};
+document.getElementById("title").textContent = titles[`${flow}:${status}`] || "Returning to Xenpen…";
+
+// Paid on xenpen.com (web=1): stay on the website and show where to follow the purchase.
+if (params.get("web") === "1") {
+  const open = document.getElementById("open");
+  if (flow === "connect") {
+    // Payout setup started from Profile → Get Paid on the website.
+    document.getElementById("message").textContent = status === "done"
+      ? "Stripe saved your payout details. Get Paid shows when payouts are ready."
+      : "Your payout setup isn't finished yet. Continue from Get Paid.";
+    open.href = "account.html#getpaid";
+    open.textContent = "Back to Get Paid";
+  } else {
+    document.getElementById("message").textContent = status === "paid"
+      ? "Your payment is held safely until you have the item. The seller has 24 hours to accept; you'll be notified."
+      : "No payment was made. You can try again from your purchases.";
+    open.href = "account.html#purchases";
+    open.textContent = "See my purchases";
+  }
+} else {
+  const target = `xenpen://payments?flow=${flow}&status=${status}${payment ? `&payment=${payment}` : ""}`;
+  document.getElementById("open").href = target;
+  location.replace(target);
+}

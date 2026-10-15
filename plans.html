@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https://XENPEN_SUPABASE_REF.supabase.co https://*.googleusercontent.com https://avatars.githubusercontent.com; connect-src 'self' https://XENPEN_SUPABASE_REF.supabase.co wss://XENPEN_SUPABASE_REF.supabase.co; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Plans · Xenpen</title>
+  <meta name="description" content="Xenpen plans for sellers, pros, and real estate: Basic, Pro, and Elite. More posts and no commission.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#2c8af0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Xenpen">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="plans.js"></script>
+  <script src="vendor/supabase-js-2.117.2.js"></script>
+  <script type="module" src="auth.js"></script>
+  <meta property="og:site_name" content="Xenpen">
+  <meta property="og:title" content="Plans · Xenpen">
+  <meta property="og:description" content="Xenpen plans for sellers, pros, and real estate: Basic, Pro, and Elite. More posts and no commission.">
+  <meta property="og:image" content="https://xenpen.com/og-beta.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Xenpen public beta now open: buy and sell, jobs, real estate, and rentals. Join on TestFlight at xenpen.com.">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html"><img src="logo-mark.png" alt="" width="44" height="44">Xenpen</a>
+  <nav class="tab-bar" aria-label="Main">
+    <a href="index.html" data-tab="home"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Home</span></a>
+    <a href="browse.html" data-tab="search"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span>Search</span></a>
+    <a href="post.html" data-tab="post"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg><span>Post</span></a>
+    <a href="messages.html" data-tab="inbox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg><span>Inbox</span></a>
+    <a href="account.html" data-tab="profile" aria-current="page"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg><span>Profile</span></a>
+  </nav>
+  <a class="bell" href="notifications.html" aria-label="Notifications"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></a>
+  <details class="menu">
+    <summary aria-label="More"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></summary>
+    <nav aria-label="More">
+        <a href="live.html">Live</a>
+        <a href="featured.html">Featured listings</a>
+        <a href="help.html">User Handbook</a>
+        <a href="faq.html">FAQs</a>
+        <a href="about.html">About</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="download.html" class="nav-cta">Get the app</a>
+    </nav>
+  </details>
+</div></header>
+<main id="main" tabindex="-1" class="wide plans-page">
+  <section class="plans-hero">
+    <p class="eyebrow">Plans for sellers, pros, and real estate</p>
+    <h1>Post more. Pay no commission.</h1>
+    <p class="lead">Selling on Xenpen is open to everyone: without a plan you can make 1 new post a day, and Xenpen keeps 5% of each item you sell. A plan gives you more posts and removes Xenpen's commission.</p>
+    <p class="status-line" id="plan-status" role="status"></p>
+  </section>
+
+  <ul class="plan-cards" id="plans">
+    <li class="plan-card">
+      <h2>Free</h2>
+      <p class="plan-price"><span>$0</span></p>
+      <ul class="plan-perks"><li>1 new post a day (30 a month)</li><li>5% commission on items you sell</li><li>1 home listing (homeowners)</li></ul>
+    </li>
+    <li class="plan-card" data-plan="basic">
+      <h2>Basic</h2>
+      <p class="plan-price"><span>$9.99</span>/month</p>
+      <p class="plan-peso">₱599/month in the Philippines</p>
+      <ul class="plan-perks"><li>3 new posts a day (90 a month)</li><li><strong>No commission</strong></li><li>List homes as a pro</li></ul>
+      <button class="button" type="button" data-subscribe="basic">Choose Basic</button>
+    </li>
+    <li class="plan-card featured" data-plan="pro">
+      <p class="plan-tag">Most popular</p>
+      <h2>Pro</h2>
+      <p class="plan-price"><span>$19.99</span>/month</p>
+      <p class="plan-peso">₱1,199/month in the Philippines</p>
+      <ul class="plan-perks"><li>5 new posts a day (150 a month)</li><li><strong>No commission</strong></li><li>List homes as a pro</li></ul>
+      <button class="button" type="button" data-subscribe="pro">Choose Pro</button>
+    </li>
+    <li class="plan-card" data-plan="elite">
+      <h2>Elite</h2>
+      <p class="plan-price"><span>$499.99</span>/month</p>
+      <p class="plan-peso">₱29,999/month in the Philippines</p>
+      <ul class="plan-perks"><li><strong>Unlimited</strong> new posts</li><li><strong>No commission</strong></li><li><strong>A team of up to 100</strong> who post and chat for you</li><li>For brokerages, dealers, and high-volume sellers</li></ul>
+      <button class="button" type="button" data-subscribe="elite">Choose Elite</button>
+    </li>
+  </ul>
+
+  <p class="actions" id="manage-row" hidden><button class="button secondary" type="button" id="manage">Manage My Plan</button></p>
+
+  <h2>Good to know</h2>
+  <ul>
+    <li><strong>Payment processing:</strong> when buyers pay in the app, the payment company's actual fee comes out of the seller's payout (cards 2.9% + 30¢; bank payments 0.8%, at most $5). It applies on every plan, and you see it before you list.</li>
+    <li><strong>Elite teams:</strong> appoint up to 100 people, including free members, in Profile → Team. They post and chat for you without limits or commission; their posts are your listings, buyers pay you, and payouts go to your account. You see everything they post and every chat about it, and you can remove anyone at any time.</li>
+    <li><strong>Founding Members</strong> (the first 300 members to verify) pay no commission without a plan, and get <strong>25% off any plan for the first year, then 10%</strong>, applied automatically at checkout.</li>
+    <li><strong>Homes:</strong> agents, brokers, and property managers need a plan to list homes. Homeowners can list one home free.</li>
+    <li><strong>Cancel anytime</strong> in Manage My Plan; your plan stays active until the end of the month you paid for.</li>
+    <li>Plans renew monthly. Philippine peso prices use a fixed rate we review every quarter; peso payments are coming soon. See our <a href="terms.html">Terms</a>.</li>
+  </ul>
+</main>
+<footer class="site-footer"><div class="inner">
+  <nav aria-label="Legal">
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="help.html">User Handbook</a>
+    <a href="faq.html">FAQs</a>
+    <a href="community-guidelines.html">Community Guidelines</a>
+    <a href="partners.html">Partners</a>
+    <a href="plans.html" aria-current="page">Plans</a>
+    <a href="featured.html">Featured listings</a>
+    <a href="law-enforcement.html">Law Enforcement</a>
+  </nav>
+  <p class="copyright">© 2026 Xenpen, LLC</p>
+</div></footer>
+</body>
+</html>
