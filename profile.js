@@ -157,7 +157,7 @@ async function inviteFriends(username, button) {
     + "\n\nTip: Xenpen is in beta on Apple's TestFlight app. Open the link in Safari (not inside another app), install "
     + "TestFlight if asked, then tap Accept and Install. No code is needed."
     + "\n\nOn Android or a computer? Go to https://xenpen.com/download.html"
-    + "\n\niPhone: download it and check it out here: https://testflight.apple.com/join/XENPEN_TESTFLIGHT_CODE";
+    + "\n\niPhone: download it and check it out here: https://testflight.apple.com/join/qyFETq1q";
   if (navigator.share) {
     try { await navigator.share({ title: "Join Xenpen, the verified online marketplace", text }); } catch { /* closed */ }
     return;

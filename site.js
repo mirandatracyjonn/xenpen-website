@@ -7,7 +7,7 @@ export const SUPABASE_URL = "https://peimygxwudoemgqxczpq.supabase.co";
 export const SUPABASE_KEY = "sb_publishable_s3SuLP4SXLDm2IJCxKjphw_cfiDUt5O";
 
 // Fill these in when the links exist; until then the Download page says "coming soon".
-export const TESTFLIGHT_URL = "https://testflight.apple.com/join/XENPEN_TESTFLIGHT_CODE";
+export const TESTFLIGHT_URL = "https://testflight.apple.com/join/qyFETq1q";
 export const APP_STORE_URL = null;  // e.g. "https://apps.apple.com/app/id0000000000"
 // Turn on once Sign in with Apple for the web is set up (Apple Services ID + secret in Supabase → Auth → Apple).
 export const APPLE_WEB_SIGN_IN = true;
