@@ -164,7 +164,7 @@ def footer(page):
         '  <nav aria-label="Legal">\n'
         f"    {items}\n"
         "  </nav>\n"
-        '  <p class="copyright">© 2026 Xenpen, LLC</p>\n'
+        '  <p class="copyright">© 2026 Geerho Tech LLC</p>\n'
         "</div></footer>"
     )
 
